@@ -14,17 +14,79 @@
     <main>
         <form action="./agradecimento.php" method="post">
 
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+            <div class="nome">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
 
-            <label for="nome_social">Nome Social:</label>
-            <input type="text" id="nome_social" name="nome_social">
+            <div class="nome_social">
+                <label for="nome_social">Nome Social (conforme Decreto Federal 8.727/2016):</label>
+                <input type="text" id="nome_social" name="nome_social">
+            </div>
 
+            <div class="rg">
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg">
+            </div>
 
+            <div class="cpf">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" inputmode="numeric" maxlength="11" pattern="[0-9]{11}">
+            </div>
 
+            <div class="data_nascimento">    
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
+            </div>
 
+            <div class="estado_civil">    
+                <label for="estado_civil">Estado Civil:</label>
+                <select id="estado_civil" name="estado_civil">
+                    <option value="">-- Selecione o estado civil --</option>
+                    <option value="solteiro">Solteiro(a)</option>
+                    <option value="casado">Casado(a)</option>
+                    <option value="divorciado">Divorciado(a)</option>
+                    <option value="viuvo">Viúvo(a)</option>
+                    <option value="uniao_estavel">União Estável</option>
+                </select>
+            </div>
+        
+            <fieldset class="local_nascimento">
+                <legend>Local de Nascimento:</legend>
+                <label for="nacionalidade">Nacionalidade:</label>
+                <select id="nacionalidade" name="nacionalidade">
+                    <option value="">-- Selecione a nacionalidade --</option>
+                    <option value="brasileiro">Brasileiro(a)</option>
+                    <option value="estrangeiro">Estrangeiro(a)</option>
+                </select>
 
+                <div id="select-brasileiros">
+                    <label for="estado-br">Estado:</label>
+                    <select id="estado-br" name="estado">
+                        <option value="">-- Selecione o estado brasileiro --</option>
+                        <!-- Consumir dados da API Localidades IBGE -->
+                    </select>
 
+                    <label for="cidade-br">Cidade:</label>
+                    <select id="cidade-br" name="cidade">
+                        <option value="">-- Selecione a cidade brasileira --</option>
+                        <!-- Consumir dados da API Localidades IBGE -->
+                    </select>
+                </div>
+
+                <div id="select-estrangeiros">
+                    <label for="pais-estr">País:</label>
+                    <input type="text" id="pais-estr" name="pais">
+
+                    <label for="estado-estr">Estado/Província:</label>
+                    <input type="text" id="estado-estr" name="estado">
+
+                    <label for="cidade-estr">Cidade:</label>
+                    <input type="text" id="cidade-estr" name="cidade">
+                </div>
+            </fieldset>
+
+            <!-- Aqui virão os demais campos do formulário -->
 
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
@@ -33,7 +95,7 @@
     </main>
 
     <footer>
-        <!-- conteudo -->
+        <!-- Aqui virá o conteudo do rodapé da página -->
     </footer>
 
 </body>
